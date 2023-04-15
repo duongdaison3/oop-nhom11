@@ -1,18 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author DUONG DAI SON
- */
 package Classes;
 
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Book {
+public class Booking {
     private UserInfor customer;
     ArrayList<Room> rooms;
     
@@ -79,11 +70,11 @@ public class Book {
         return total;
     }
 
-    public UserInfo getCustomer() {
+    public UserInfor getCustomer() {
         return customer;
     }
 
-    public void setCustomer(UserInfo customer) {
+    public void setCustomer(UserInfor customer) {
         this.customer = customer;
     }
 

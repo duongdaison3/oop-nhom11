@@ -11,7 +11,10 @@ public class Room {
 	private boolean hasPhone;
 	
 	private RoomFare room_class;
-
+	
+	public Room (String roomNo) {
+		room_no = roomNo;
+	}
 	public int getRoom_id() {
 		return room_id;
 	}
