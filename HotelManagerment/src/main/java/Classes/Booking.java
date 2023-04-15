@@ -79,11 +79,11 @@ public class Booking {
         return total;
     }
 
-    public UserInfo getCustomer() {
+    public UserInfor getCustomer() {
         return customer;
     }
 
-    public void setCustomer(UserInfo customer) {
+    public void setCustomer(UserInfor customer) {
         this.customer = customer;
     }
 
