@@ -12,7 +12,7 @@ package Classes;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Book {
+public class Booking {
     private UserInfor customer;
     ArrayList<Room> rooms;
     
