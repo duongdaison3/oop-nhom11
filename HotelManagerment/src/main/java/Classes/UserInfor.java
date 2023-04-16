@@ -3,7 +3,7 @@ package Classes;
 /*
  * @VuTrinh
  */
-public class UserInfo {
+public class UserInfor {
 	private int customer_id;
 	private String name;
 	private String address;

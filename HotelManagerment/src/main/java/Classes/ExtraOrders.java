@@ -6,59 +6,54 @@ package Classes;
  */
 public class ExtraOrders {
 
-    private int order_id;
-    private int customer_id;
-    private String dateTime;
-    private int quantity;
-    private Item item;
-    
-    public int getOrder_id() {
-        return order_id;
-    }
+	private int order_id;
+	private int customer_id;
+	private String dateTime;
+	private int quantity;
+	private Item item;
 
-    public void setOrder_id(int order_id) {
-        this.order_id = order_id;
-    }
+	public int getOrder_id() {
+		return order_id;
+	}
 
-    public int getCustomer_id() {
-        return customer_id;
-    }
+	public void setOrder_id(int order_id) {
+		this.order_id = order_id;
+	}
 
-    public void setCustomer_id(int customer_id) {
-        this.customer_id = customer_id;
-    }
+	public int getCustomer_id() {
+		return customer_id;
+	}
 
-    public String getDateTime() {
-        return dateTime;
-    }
+	public void setCustomer_id(int customer_id) {
+		this.customer_id = customer_id;
+	}
 
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
-    }
+	public String getDateTime() {
+		return dateTime;
+	}
 
-    public int getQuantity() {
-        return quantity;
-    }
+	public void setDateTime(String dateTime) {
+		this.dateTime = dateTime;
+	}
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
+	public int getQuantity() {
+		return quantity;
+	}
 
-    public Item getItem() {
-        return item;
-    }
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 
-    public void setItem(Item item) {
-        this.item = item;
-    }
-    
-    public int calculateTotal()
-    {
-       return item.getPrice() * quantity;
-    }
+	public Item getItem() {
+		return item;
+	}
 
-    
-    
-    
-    
+	public void setItem(Item item) {
+		this.item = item;
+	}
+
+	public int calculateTotal() {
+		return item.getPrice() * quantity;
+	}
+
 }
