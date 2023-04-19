@@ -1,4 +1,4 @@
-package DatabaeOperation;
+package DatabaseOperation;
 
 import Classes.UserInfo;
 import java.sql.Connection;

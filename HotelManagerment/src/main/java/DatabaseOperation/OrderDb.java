@@ -1,4 +1,4 @@
-package DatabaeOperation;
+package DatabaseOperation;
 
 import Classes.Order;
 import DatabaeOperation.DataBaseConnection;
