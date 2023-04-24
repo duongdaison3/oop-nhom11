@@ -18,7 +18,6 @@ public class ItemDb {
         try {
             String insertItem = "insert into item('name','description','price') values('" + item.getItem_name() + "','" + item.getDescription() + "'," + item.getPrice() + ")";
 
-            // System.out.println(">>>>>>>>>> "+ insertRoomTypeQuery);
             statement = conn.prepareStatement(insertItem);
 
             statement.execute();
@@ -38,7 +37,6 @@ public class ItemDb {
         try {
             String updateFood = "update food set name= '" + item.getItem_name() + "', price= " + item.getPrice() + "description = '" + item.getDescription() + "' where item_id = " + item.getItem_id();
 
-            // System.out.println(">>>>>>>>>> "+ insertRoomTypeQuery);
             statement = conn.prepareStatement(updateFood);
 
             statement.execute();

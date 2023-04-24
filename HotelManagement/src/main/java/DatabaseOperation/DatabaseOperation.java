@@ -1,11 +1,6 @@
 package DatabaseOperation;
 
-import Classes.Food;
-import Classes.Item;
-import Classes.Room;
-import Classes.RoomFare;
 import Classes.UserInfor;
-import DatabaseOperation.DataBaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,7 +25,6 @@ public class DatabaseOperation {
                     + ",'" + user.getType() + "'"
                     + ")";
 
-            //System.out.println(">>>>>>>>>> "+ insertQuery);
             statement = conn.prepareStatement(insertQuery);
 
             statement.execute();
@@ -64,11 +58,8 @@ public class DatabaseOperation {
                     + "type = '" + user.getType() + "' where user_id= "
                     + user.getCustomer_id();
 
-            //System.out.println(">>>>>>>>>> "+ insertQuery);
-            //System.out.println(updateQuery);
             statement = conn.prepareStatement(updateQuery);
 
-            //System.out.println(updateQuery);
             statement.execute();
 
             JOptionPane.showMessageDialog(null, "successfully updated new Customer");
@@ -117,7 +108,7 @@ public class DatabaseOperation {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.toString() + "\n error coming from search user function");
         }
-            //System.out.println("fetching something");
+
         return result;
     }
 
@@ -132,14 +123,13 @@ public class DatabaseOperation {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.toString() + "\n error coming from returning AN user function");
         }
-            //System.out.println("fetching something");
+
         return result;
     } 
 
     public ResultSet getAvailableRooms(long check_inTime) {
         try {
-            ///SELECT room_no FROM room LEFT OUTER JOIN booking ON room.room_no = booking.rooms WHERE booking.rooms is null or booking.check_out < strftime('%s', 'now')
-            // SELECT distinct room_no FROM room LEFT OUTER JOIN booking ON room.room_no = booking.rooms WHERE booking.rooms is null or booking.check_out < strftime('%s', 'now') order by check_out desc 
+            
              String query = "SELECT room_no FROM room LEFT OUTER JOIN booking ON room.room_no = booking.booking_room WHERE booking.booking_room is null or "+check_inTime+"< booking.check_in " +"or booking.check_out <"+check_inTime+" group by room.room_no  order by room_no ";
              System.out.println(query);
              statement = conn.prepareStatement(query);
@@ -153,17 +143,7 @@ public class DatabaseOperation {
 
     public ResultSet getBookingInfo(long start_date, long end_date, String roomNo) {
         try {
-            /*
-            
-                 select * from booking where 
-                (check_in <= start_date and (check_out=0 or check_out<= end_date ) )
-                or
-                (check_in>start_date and check_out< end_date)
-                or
-                (check_in <=end_date and (check_out =0 or check_out > end_date) ) 
-            
-                    */
-            
+
             String query = "select * from booking where booking_room = '"+ roomNo+"' AND ("
                     +"( check_in <= "+start_date +" and ( check_out = 0 or check_out<= "+end_date+") ) or"
                     +"( check_in >"+start_date+" and check_out< "+end_date+" ) or"
@@ -188,7 +168,6 @@ public class DatabaseOperation {
             System.out.println(query +" <<<");
             statement = conn.prepareStatement(query);
             result = statement.executeQuery();
-            //System.out.println(" user id "+ result.getInt("user_id"));
             
             id = result.getInt("user_id");
             

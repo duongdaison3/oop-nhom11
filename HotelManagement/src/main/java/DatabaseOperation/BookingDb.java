@@ -19,7 +19,7 @@ public class BookingDb{
     public void insertBooking(Booking booking) {
         for (int i = 0; i < booking.getRooms().size(); i++) {
             try {
-                String insertQuery = "insert into booking"
+                String insertQuery = "Insert into booking"
                     + "('custom_id','booking_rom','guests','check_in','check_out','booking_type','has_checked_out')"
                     + " values("
                     + booking.getCustomer().getCustomer_id()
@@ -34,7 +34,7 @@ public class BookingDb{
                 statement = conn.prepareStatement(insertQuery);
                 statement.execute();
 
-                JOptionPane.showMessageDialog(null, "successfully inserted new Booking");
+                JOptionPane.showMessageDialog(null, "Successfully inserted new Booking");
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, ex.toString() + "\n" + "InsertQuery booking Failed");
             } finally {
@@ -86,9 +86,9 @@ public class BookingDb{
             String updateFood = "update booking set has_checked_out= 1, check_out = " + checkOutTime + " where booking_id = " + bookingId;
             statement = conn.prepareStatement(updateFood);
             statement.execute();
-            JOptionPane.showMessageDialog(null, "successfully update Check Out ");
+            JOptionPane.showMessageDialog(null, "Successfully update Check Out ");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex.toString() + "\n" + "updateCheckOut of BookingDB Failed");
+            JOptionPane.showMessageDialog(null, ex.toString() + "\n" + "UpdateCheckOut of BookingDB Failed");
         } finally {
             flushStatementOnly();
         }
@@ -138,10 +138,6 @@ public class BookingDb{
             System.out.println(query);
             statement = conn.prepareStatement(query);
             result = statement.executeQuery();
-           // price = result.getInt("price");
-            //flushAll();
-           // System.out.println(price);
-           // flushAll();
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.toString() + "\n error coming from returning payment getAllPaymentInfo,bookingDB");
