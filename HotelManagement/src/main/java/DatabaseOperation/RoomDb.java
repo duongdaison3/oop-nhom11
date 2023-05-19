@@ -115,10 +115,8 @@ public class RoomDb {
                     
 
             System.out.println(">>>>>>>>>> "+ updateQuery);
-            //System.out.println(updateQuery);
             statement = conn.prepareStatement(updateQuery);
 
-            //System.out.println(updateQuery);
             statement.execute();
 
             JOptionPane.showMessageDialog(null, "successfully updated a room");
@@ -172,7 +170,6 @@ public class RoomDb {
         try {
             String updateRoomTypeQuery = "update roomType set price= " + roomType.getPricePerDay() + " where type='" + roomType.getRoom_type() + "'";
 
-            //System.out.println(">>>>>>>>>> "+ updateRoomTypeQuery);
             statement = conn.prepareStatement(updateRoomTypeQuery);
 
             statement.execute();

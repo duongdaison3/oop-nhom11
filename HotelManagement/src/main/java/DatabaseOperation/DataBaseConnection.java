@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-//import org.sqlite.*;
+
 
 public class DataBaseConnection {
     
@@ -12,7 +12,7 @@ public class DataBaseConnection {
         try {
             Class.forName("org.sqlite.JDBC");
             Connection conn = DriverManager.getConnection("jdbc:sqlite:hotel.sqlite");
-          //  JOptionPane.showMessageDialog(null, "Connection Establishment");
+          
             return conn;
         } catch (ClassNotFoundException | SQLException ex) {
             JOptionPane.showMessageDialog(null, ex.toString());

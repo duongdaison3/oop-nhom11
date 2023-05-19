@@ -27,7 +27,6 @@ public class CustomerDb {
                     + ",'" + user.getType() + "'"
                     + ")";
 
-            //System.out.println(">>>>>>>>>> "+ insertQuery);
             statement = conn.prepareStatement(insertQuery);
 
             statement.execute();
@@ -52,11 +51,9 @@ public class CustomerDb {
                     + "type = '" + user.getType() + "' where user_id= "
                     + user.getCustomer_id();
 
-            //System.out.println(">>>>>>>>>> "+ insertQuery);
-            //System.out.println(updateQuery);
+
             statement = conn.prepareStatement(updateQuery);
 
-            //System.out.println(updateQuery);
             statement.execute();
 
             JOptionPane.showMessageDialog(null, "successfully updated new Customer");

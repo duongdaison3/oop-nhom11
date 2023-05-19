@@ -18,7 +18,6 @@ public class FoodDb {
         try {
             String insertFood = "insert into food('name','price') values('" + food.getName() + "'," + food.getPrice() + ")";
 
-            // System.out.println(">>>>>>>>>> "+ insertRoomTypeQuery);
             statement = conn.prepareStatement(insertFood);
 
             statement.execute();
@@ -50,7 +49,6 @@ public class FoodDb {
         try {
             String updateFood = "update food set name= '" + food.getName() + "', price= " + food.getPrice() + " where food_id = " + food.getFood_id();
 
-            // System.out.println(">>>>>>>>>> "+ insertRoomTypeQuery);
             statement = conn.prepareStatement(updateFood);
 
             statement.execute();
